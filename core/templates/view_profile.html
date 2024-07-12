@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}View Profile{% endblock %}
+
+{% block content %}
+<h1>{{ profile.user.username }}'s Profile</h1>
+<p><strong>Name:</strong> {{ profile.user.get_full_name }}</p>
+<p><strong>Email:</strong> {{ profile.user.email }}</p>
+{% if profile.bio %}
+    <p><strong>Bio:</strong> {{ profile.bio }}</p>
+{% endif %}
+{% if profile.date_of_birth %}
+    <p><strong>Date of Birth:</strong> {{ profile.date_of_birth }}</p>
+{% endif %}
+{% endblock %}

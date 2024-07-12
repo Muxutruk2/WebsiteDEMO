@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="post-grid">
+    {% for post in posts %}
+    <div class="post-preview" onclick="location.href='{% url 'post_detail' post.id %}'">
+        <h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
+        <div class="post-meta">
+            <p><strong>Author:</strong> <a href="{% url 'view_profile' username=post.author.username %}">{{ post.author.username }}</a></p>
+            <p>{{ post.comment_count }} Comments</p>
+        </div>
+        <p>{{ post.content|truncatewords:30 }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

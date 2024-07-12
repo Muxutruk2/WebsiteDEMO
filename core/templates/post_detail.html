@@ -1,0 +1,50 @@
+<!-- templates/post_detail.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<article class="post-detail">
+    <header>
+        <h1>{{ post.title }}</h1>
+        <p class="post-meta">By <a href="{% url 'view_profile' username=post.author.username %}" class="author-link">{{ post.author.username }}</a> on {{ post.created_at|date:"F j, Y, g:i a" }}</p>
+    </header>
+
+    <div class="post-content">
+        <p>{{ post.content }}</p>
+    </div>
+
+    <section class="comments-section">
+        <h2>Comments</h2>
+        <div class="comments-list">
+            {% for comment in comments %}
+            <div class="comment">
+                <div class="comment-header">
+                    {% if comment.author.profile.profile_picture %}
+                    <img src="{{ comment.author.profile.profile_picture.url }}" alt="{{ comment.author.username }}" class="profile-picture">
+                    {% else %}
+                    <img src="{% static 'default_profile_pic.jpg' %}" alt="{{ comment.author.username }}" class="profile-picture">
+                    {% endif %}
+                    <span>{{ comment.author.username }}</span>
+                    <span>·</span>
+                    <span>{{ comment.created_at|naturaltime }}</span>
+                </div>
+                <div class="comment-body">
+                    <p>{{ comment.content }}</p>
+                </div>
+            </div>
+            {% empty %}
+            <p>No comments yet.</p>
+            {% endfor %}
+        </div>
+
+        <h2>Add a Comment</h2>
+        <form method="post" class="comment-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-submit">Add Comment</button>
+        </form>
+    </section>
+</article>
+{% endblock %}
