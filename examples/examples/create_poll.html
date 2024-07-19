@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Poll</title>
+    
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/post/new/">Create Post</a></li>
+            <li><a href="/poll/new/">Create Poll</a></li>
+            
+                <li><a href="/accounts/login/">Login</a></li>
+                <li><a href="/signup/">Sign Up</a></li>
+            
+        </ul>
+    </nav>
+    <div class="container">
+        
+        
+<h1>Create Poll</h1>
+<form method="post">
+    <input type="hidden" name="csrfmiddlewaretoken" value="gwNggGKFzavtcvHUqYoLt1BhwFX6CY9eu49ydAmHX8In04kY1K5oNceXaPEoKKmr">
+    <p>
+    <label for="id_question">Question:</label>
+    <input type="text" name="question" maxlength="200" required id="id_question">
+    
+    
+      
+    
+  </p>
+    <p>
+    <label for="id_choice_text">Choice text:</label>
+    <input type="text" name="choice_text" maxlength="200" required id="id_choice_text">
+    
+    
+      
+    
+  </p>
+    <button type="submit">Create Poll</button>
+</form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!-- templates/post_detail.html -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asd</title>
+    
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/post/new/">Create Post</a></li>
+            <li><a href="/poll/new/">Create Poll</a></li>
+            
+                <li><a href="/accounts/login/">Login</a></li>
+                <li><a href="/signup/">Sign Up</a></li>
+            
+        </ul>
+    </nav>
+    <div class="container">
+        
+        
+<article class="post-detail">
+    <header>
+        <h1>asd</h1>
+        <p class="post-meta">By <a href="/profile/Muxutruk/" class="author-link">Muxutruk</a> on June 29, 2024, 8:49 p.m.</p>
+    </header>
+
+    <div class="post-content">
+        <p>asd</p>
+    </div>
+
+    <section class="comments-section">
+        <h2>Comments</h2>
+        <div class="comments-list">
+            
+            <div class="comment">
+                <div class="comment-header">
+                    
+                    <img src="/static/default_profile_pic.jpg" alt="asd" class="profile-picture">
+                    
+                    <span>asd</span>
+                    <span>·</span>
+                    <span>2 weeks ago</span>
+                </div>
+                <div class="comment-body">
+                    <p>comment</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <h2>Add a Comment</h2>
+        <form method="post" class="comment-form">
+            <input type="hidden" name="csrfmiddlewaretoken" value="dEEg6uRHnvHRMOKpW7hixm8bRdjkO2oJnDQh4p6so1YeX4nqngQ6CKMeGjiYMn0p">
+            <p>
+    
+    <textarea name="content" cols="40" rows="10" required id="id_content">
+</textarea>
+    
+    
+      
+    
+  </p>
+            <button type="submit" class="btn-submit">Add Comment</button>
+        </form>
+    </section>
+</article>
+
+    </div>
+</body>
+</html>

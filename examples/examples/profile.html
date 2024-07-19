@@ -1,0 +1,82 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/post/new/">Create Post</a></li>
+            <li><a href="/poll/new/">Create Poll</a></li>
+            
+                <li><a href="/profile/">Profile</a></li>
+                <li>
+                    <form method="post" action="/accounts/logout/">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="hmBRGXfG5ymA9zAbvKKzdn7blAfUw5zBVA67qOsZIQczXlvR30l1yIacrJvEdzN8">
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+            
+        </ul>
+    </nav>
+    <div class="container">
+        
+        
+<div class="profile-container">
+    <div class="profile-header">
+        <div class="profile-picture">
+            
+            <img src="/static/default_profile_pic.jpg" alt="Default profile picture">
+            
+        </div>
+        <div class="profile-info">
+            <h2>Muxutruk</h2>
+            <p><strong>Bio:</strong> </p>
+            <p><strong>Date of Birth:</strong> None</p>
+        </div>
+    </div>
+    
+    <h3>Posts by Muxutruk</h3>
+    <div class="post-list">
+        
+        <div class="post-item">
+            <a href="/post/2/">asd</a>
+            <p>asd</p>
+        </div>
+        
+        <div class="post-item">
+            <a href="/post/3/">Test2</a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget iaculis justo. Sed tincidunt erat laoreet leo sodales vestibulum. Nunc malesuada sed mi ut blandit. In velit lacus, tincidunt at …</p>
+        </div>
+        
+    </div>
+
+    <div class="account-actions">
+        <h2>Change Password</h2>
+        <form method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="hmBRGXfG5ymA9zAbvKKzdn7blAfUw5zBVA67qOsZIQczXlvR30l1yIacrJvEdzN8">
+            
+            <button type="submit">Change Password</button>
+        </form>
+    
+        <hr>
+    
+        <h2>Delete Account</h2>
+        <p>Deleting your account will permanently remove all data associated with it.</p>
+        <form method="post" action="/delete-account/">
+            <input type="hidden" name="csrfmiddlewaretoken" value="hmBRGXfG5ymA9zAbvKKzdn7blAfUw5zBVA67qOsZIQczXlvR30l1yIacrJvEdzN8">
+            <button type="submit" onclick="return confirm('Are you sure you want to delete your account? This action cannot be undone.')">Delete Account</button>
+        </form>
+    </div>
+</div>
+
+    </div>
+</body>
+</html>

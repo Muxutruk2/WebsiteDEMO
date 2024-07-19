@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/post/new/">Create Post</a></li>
+            <li><a href="/poll/new/">Create Poll</a></li>
+            
+                <li><a href="/accounts/login/">Login</a></li>
+                <li><a href="/signup/">Sign Up</a></li>
+            
+        </ul>
+    </nav>
+    <div class="container">
+        
+        
+<h1>Login</h1>
+<form method="post" action="/accounts/login/">
+    <input type="hidden" name="csrfmiddlewaretoken" value="SO4w1FhPfpzY8TPnHBKeF8L8DTjNGcSU2b3cgHg4IcUgnJie33Jmh3qwpehdCvph">
+    <p>
+    <label for="id_username">Username:</label>
+    <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_password">Password:</label>
+    <input type="password" name="password" autocomplete="current-password" required id="id_password">
+    
+    
+      
+    
+  </p>
+    <button type="submit">Login</button>
+</form>
+<p>Don't have an account? <a href="/signup/">Sign up here</a>.</p>
+
+    </div>
+</body>
+</html>
